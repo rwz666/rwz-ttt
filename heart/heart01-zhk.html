@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="utf-8">
+  <link rel="stylesheet" href="../css/heart01-zhk.css">
   <title>爱心</title>
 
   <style>
@@ -19,12 +20,38 @@
       width: 100%;
       height: 100%;
     }
+
+    .zhk {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-family: Arial, sans-serif;
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+      background-color: red;
+      padding: 10px 20px;
+      border-radius: 5px;
+      animation: zhk-font 1s ease-in infinite;
+    }
+
+    @keyframes zhk-font {
+      0% {
+        transform: translate(-50%, -50%) scale(1);
+      }
+
+      100% {
+        transform: translate(-50%, -50%) scale(1.5);
+      }
+    }
   </style>
 </head>
 
 <body>
 
   <canvas id="pinkboard"></canvas>
+  <span class="zhk">浩凯</span>
 
   <script>
     /*
@@ -218,6 +245,10 @@
         // create the fill
         context.fillStyle = '#ea80b0';
         context.fill();
+
+        // 加名字
+        // context.fillStyle = '#ffc0cb'
+        // context.fillRect = (500, 500, 200, 200)
         // create the image
         var image = new Image();
         image.src = canvas.toDataURL();
